@@ -1,0 +1,25 @@
+[project]
+name = "ra_mapper"
+version = "0.1.0"
+description = "Normalizes RetroAchivements games into a relational database, and attempts to find mappings from IGDB to RA games."
+readme = "README.md"
+authors = [
+    { name = "jwall64", email = "jwall64yt@gmail.com" }
+]
+requires-python = ">=3.13"
+dependencies = [
+    "levenshtein>=0.27.5",
+    "requests>=2.34.2",
+]
+
+[project.scripts]
+ra_mapper = "ra_mapper.main:main"
+
+[build-system]
+requires = ["uv_build>=0.12.19,<0.13.0"]
+build-backend = "uv_build"
+
+[dependency-groups]
+dev = [
+    "pytest>=9.1.1",
+]
